@@ -1,0 +1,35 @@
+/* Overall container styling */
+div {
+    max-width: 400px;
+    margin: 40px auto;
+    padding: 15px;
+    background-color: #a9b822;
+    border-radius: 10px;
+    box-shadow: 0 5px 15px rgba(0, 0, 0, 0.1);
+    text-align: center;
+    border: 1px solid rgb(30, 127, 192);
+  }
+  
+  /* Profile header styling */
+ h2 {
+    font-size: 2em;
+    color: #333;
+    margin-bottom: 25px;
+    border-bottom: 2px solid #f2f2f2;
+    padding-bottom: 10px;
+  }
+  
+  /* Styling for each detail line */
+ p {
+    font-size: 1.2em;
+    margin: 15px 0;
+    color: #555;
+    line-height: 1.6;
+  }
+  
+  /* Styling for labels (strong tag) */
+ p strong {
+    color: #333;
+    font-weight: 600;
+  }
+  

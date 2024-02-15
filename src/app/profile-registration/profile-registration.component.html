@@ -1,0 +1,57 @@
+<form [formGroup]="registrationForm" (ngSubmit)="onSubmit()">
+        <!-- First Name -->
+        <div>
+          <label for="firstName">First Name</label>
+          <input type="text" id="firstName" formControlName="firstName">
+        <div *ngIf="registrationForm.get('firstName')?.invalid && registrationForm.get('firstName')?.touched">
+            <p *ngIf="registrationForm.get('firstName')?.errors?.['required']">First Name is required.</p>
+            <p *ngIf="registrationForm.get('firstName')?.errors?.['pattern']">First Name must contain only letters.</p>
+          </div>
+        </div>
+
+    <!-- Last Name -->
+    <div>
+      <label for="lastName">Last Name</label>
+      <input type="text" id="lastName" formControlName="lastName">
+    <div *ngIf="registrationForm?.get('lastName')?.invalid && registrationForm?.get('lastName')?.touched">
+        <p *ngIf="registrationForm.get('lastName')?.errors?.['required']">Last Name is required.</p>
+        <p *ngIf="registrationForm.get('firstName')?.errors?.['pattern']">Last Name must contain only letters.</p>
+      </div>
+    </div>
+  
+    <!-- Email -->
+    <div>
+      <label for="email">Email</label>
+      <input type="email" id="email" formControlName="email">
+    <div *ngIf="registrationForm.controls['email'].invalid && registrationForm.controls['email'].touched">
+        <p *ngIf="registrationForm.controls['email'].errors?.['required']">Email is required.</p>
+        <p *ngIf="registrationForm.controls['email'].errors?.['email']">Please enter a valid email address.</p>
+      </div>
+    </div>
+  
+    <!-- Password -->
+    <div>
+      <label for="password">Password</label>
+      <input type="password" id="password" formControlName="password">
+    <div *ngIf="registrationForm.controls['password'].invalid && registrationForm.controls['password'].touched">
+        <p *ngIf="registrationForm.controls['password'].errors?.['required']">Password is required.</p>
+        <p *ngIf="registrationForm.controls['password'].errors?.['minlength']">Password must be at least 8 characters long.</p>
+        <p *ngIf="registrationForm.controls['password']?.errors?.['pattern']">Password must include alpha-numeric and special characters.</p>
+      </div>
+    </div>
+  
+    <!-- Confirm Password -->
+    <div>
+      <label for="confirmPassword">Confirm Password</label>
+      <input type="password" id="confirmPassword" formControlName="confirmPassword">
+      <div *ngIf="registrationForm.controls['confirmPassword'].errors && registrationForm.controls['confirmPassword'].touched">
+        <p *ngIf="registrationForm.controls['confirmPassword'].errors?.['required']">Confirming password is required.</p>
+        <p *ngIf="registrationForm.controls['confirmPassword'].errors?.['mustMatch']">Passwords must match.</p>
+      </div>
+    </div>
+  
+    <!-- Submit Button -->
+    <button type="submit" >Register</button>
+</form>
+  
+<!-- [disabled]="!registrationForm.valid" -->
