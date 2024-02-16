@@ -15,7 +15,7 @@
       <input type="text" id="lastName" formControlName="lastName">
     <div *ngIf="registrationForm?.get('lastName')?.invalid && registrationForm?.get('lastName')?.touched">
         <p *ngIf="registrationForm.get('lastName')?.errors?.['required']">Last Name is required.</p>
-        <p *ngIf="registrationForm.get('firstName')?.errors?.['pattern']">Last Name must contain only letters.</p>
+        <p *ngIf="registrationForm.get('lastName')?.errors?.['pattern']">Last Name must contain only letters.</p>
       </div>
     </div>
   
